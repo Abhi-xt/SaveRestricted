@@ -193,7 +193,7 @@ async def get_msg(userbot, client, bot, sender, edit_id, msg_link, i):
         chat =  msg_link.split("/")[-2]
         try:
             if msg.empty:
-                group = await userbot.get_users(chat)
+                group = await userbot.get_users(chat, msg_id)
                 group_link = f't.me/c/{int(group.id)}/{int(msg_id)}'
                 #recurrsion 
                 return await get_msg(userbot, client, bot, sender, edit_id, msg_link, i)
